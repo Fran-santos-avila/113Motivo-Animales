@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>113 Motivo Animales</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: url('fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            background-color: rgba(255, 111, 97, 0.8);
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        header h1 {
+            font-size: 3em; /* Tres veces más grande */
+            font-weight: bold;
+        }
+        nav {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            padding: 0.5em 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+            padding: 0.5em;
+        }
+        nav a:hover {
+            background-color: #FF6F61;
+            border-radius: 5px;
+        }
+        .language-buttons {
+            display: inline-block;
+            float: right;
+        }
+        .language-buttons img {
+            width: 30px;
+            height: 20px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2em 0;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin: 2em 0;
+        }
+        footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 1em;
+            margin: 1em 0;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        .card p {
+            color: #666;
+        }
+        .card p span {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        h2 {
+            color: #FF6F61;
+            border-bottom: 2px solid #FF6F61;
+            padding-bottom: 0.5em;
+        }
+        .social-icons {
+            text-align: center;
+            margin-top: 1em;
+        }
+        .social-icons a {
+            margin: 0 20px;
+            color: #000;
+            text-decoration: none;
+            font-size: 2em;
+        }
+        .social-icons a:hover {
+            color: #333;
+        }
+        .highlight-title {
+            font-size: 2em;
+            color: #FF6F61;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            text-align: center;
+        }
+        .adoption-image {
+            text-align: center;
+            margin: 2em 0;
+        }
+        .adoption-image img {
+            width: 200%; /* Aumentar al doble del tamaño original */
+            max-width: 1200px; /* Ajustar al doble del tamaño máximo original */
+            border-radius: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1em 2em;
+            font-size: 1.2em;
+            color: white;
+            background-color: #FF6F61;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            margin: 1em 0;
+        }
+        .btn:hover {
+            background-color: #E55B50;
+        }
+    </style>
+    <script>
+        const content = {
+            es: {
+                headerTitle: "113 Motivo Animales",
+                headerSubtitle: "Amor y cuidado para todos los animales",
+                navItems: ["Biografía", "Adopta", "Proyectos", "Animales", "Socios", "Contacto"],
+                adoptaTitle: "Adopta",
+                adoptaHighlight: "¡Entra a conocer a nuestros adoptables!",
+                animalesTitle: "Animales Disponibles para Adopción",
+                sociosTitle: "Socios",
+                sociosButton: "¡Hazte socio!",
+                sociosContent: `HAZTE SOCIO Y FORMA PARTE DE NUESTRA GRAN FAMILIA 113🐾❤️
+                Sabemos que sois muchos los que seguís a diario nuestra labor y queréis ayudar. Tenemos una nueva forma de hacerlo.
+                Puedes hacerte socio por 5€ al mes, o 60€ anuales y es tan fácil cómo inscribirte aquí.
+                Las aportaciones de nuestros socios conformarán unos ingresos muy valiosos para afrontar los gastos diarios de la protectora.
+                Ahora mismo, la única forma de ingresos de la asociación son donaciones puntuales, con las cuotas de socios pretendemos garantizar que el 113 siga alcanzando sus objetivos, buscando la protección y bienestar de los animales.
+                Por favor, todo aquel que esté interesado en formar parte de la familia 113 como socio, que rellene el formulario.
+                Esperando contar con vuestro apoyo, para que, juntos, podamos hacer un mayor trabajo para  seguir ayudando y proteger a los animales necesitados y defender sus derechos.
+                Tenemos a vuestra disposición el documento de admisión de socios que deberá ser enviado al 💌 socios113@gmail.com.
+                Por nuestra parte se os adjudicará un número de socio e invitaremos a los socios a nuestras reuniones y conocer nuestras actividades y gestiones con total transparencia.
+                Para aquellos socios que no puedan asistir, compartiremos un informe con todas esas actividades y el estado de cuentas.`,
+                biografiaTitle: "Biografía",
+                biografiaContent: `Somos una protectora de animales dedicada a rescatar, cuidar y encontrar hogares amorosos para animales abandonados y maltratados. Fundada en 2020, nuestra misión es asegurar que cada animal tenga una segunda oportunidad para una vida feliz y saludable.`,
+                portafolioTitle: "Proyectos",
+                proyecto1: `<span>Rescate de Animales Callejeros:</span> Desde nuestra fundación, hemos rescatado a más de 200 animales de las calles, proporcionándoles atención médica y cuidados necesarios.`,
+                proyecto2: `<span>Campañas de Esterilización:</span> Organizamos campañas de esterilización para controlar la población de animales callejeros y mejorar su calidad de vida.`,
+                proyecto3: `<span>Educación y Conciencia:</span> Realizamos talleres y charlas en escuelas y comunidades para educar sobre el bienestar animal y la importancia de la adopción responsable.`,
+                proyecto4: `<span>Casas de acogida:</span> Proporcionamos hogares temporales para los animales rescatados hasta que encuentran una adopción permanente.`,
+                contactoTitle: "Contacto",
+                contactoContent: `Para más información, por favor contáctanos:
+                Email: motivoanimales113@gmail.com
+                Teléfono: 672405010
+                Dirección: Camino Mucientes 3, Villanubla, Valladolid, España`
+            },
+            en: {
+                headerTitle: "113 Animal Motive",
+                headerSubtitle: "Love and care for all animals",
+                navItems: ["Biography", "Adopt", "Projects", "Animals", "Partners", "Contact"],
+                adoptaTitle: "Adopt",
+                adoptaHighlight: "Check out our adoptable animals!",
+                animalesTitle: "Animals Available for Adoption",
+                sociosTitle: "Partners",
+                sociosButton: "Become a Partner!",
+                sociosContent: `BECOME A PARTNER AND BE PART OF OUR GREAT 113 FAMILY🐾❤️
+                We know that many of you follow our work daily and want to help. We have a new way to do it.
+                You can become a partner for 5€ per month, or 60€ annually and it's as easy as signing up here.
+                The contributions from our partners will form valuable income to cover the daily expenses of the shelter.
+                Right now, the only form of income for the association is occasional donations, with partner fees we intend to ensure that the 113 continues to reach its goals, seeking the protection and welfare of animals.
+                Please, anyone who is interested in becoming part of the 113 family as a partner, fill out the form.
+                Hoping to count on your support, so that, together, we can do greater work to continue helping and protecting animals in need and defending their rights.
+                We have at your disposal the partner admission document which should be sent to 💌 socios113@gmail.com.
+                We will assign you a partner number and invite partners to our meetings to know our activities and management with total transparency.
+                For those partners who cannot attend, we will share a report with all those activities and the state of accounts.`,
+                biografiaTitle: "Biography",
+                biografiaContent: `We are an animal shelter dedicated to rescuing, caring for, and finding loving homes for abandoned and abused animals. Founded in 2020, our mission is to ensure that every animal has a second chance for a happy and healthy life.`,
+                portafolioTitle: "Projects",
+                proyecto1: `<span>Street Animal Rescue:</span> Since our founding, we have rescued over 200 animals from the streets, providing them with medical attention and necessary care.`,
+                proyecto2: `<span>Spay and Neuter Campaigns:</span> We organize spay and neuter campaigns to control the stray animal population and improve their quality of life.`,
+                proyecto3: `<span>Education and Awareness:</span> We conduct workshops and talks in schools and communities to educate about animal welfare and the importance of responsible adoption.`,
+                proyecto4: `<span>Foster Homes:</span> We provide temporary homes for rescued animals until they find a permanent adoption.`,
+                contactoTitle: "Contact",
+                contactoContent: `For more information, please contact us:
+                Email: motivoanimales113@gmail.com
+                Phone: 672405010
+                Address: Camino Mucientes 3, Villanubla, Valladolid, Spain`
+            },
+            fr: {
+                headerTitle: "113 Motif Animal",
+                headerSubtitle: "Amour et soins pour tous les animaux",
+                navItems: ["Biographie", "Adopter", "Projets", "Animaux", "Partenaires", "Contact"],
+                adoptaTitle: "Adopter",
+                adoptaHighlight: "Découvrez nos animaux adoptables!",
+                animalesTitle: "Animaux Disponibles à l'Adoption",
+                sociosTitle: "Partenaires",
+                sociosButton: "Devenir Partenaire!",
+                sociosContent: `DEVENEZ PARTENAIRE ET FAITES PARTIE DE NOTRE GRANDE FAMILLE 113🐾❤️
+                Nous savons que beaucoup d'entre vous suivent notre travail quotidiennement et veulent aider. Nous avons un nouveau moyen de le faire.
+                Vous pouvez devenir partenaire pour 5€ par mois, ou 60€ par an et c'est aussi simple que de s'inscrire ici.
+                Les contributions de nos partenaires constitueront des revenus précieux pour couvrir les dépenses quotidiennes du refuge.
+                En ce moment, la seule forme de revenu pour l'association est des dons ponctuels, avec les frais des partenaires, nous entendons garantir que le 113 continue d'atteindre ses objectifs, cherchant la protection et le bien-être des animaux.
+                S'il vous plaît, toute personne intéressée à devenir membre de la famille 113 en tant que partenaire, remplissez le formulaire.
+                En espérant compter sur votre soutien, afin que, ensemble, nous puissions faire un plus grand travail pour continuer à aider et protéger les animaux dans le besoin et défendre leurs droits.
+                Nous avons à votre disposition le document d'admission des partenaires qui doit être envoyé à 💌 socios113@gmail.com.
+                Nous vous attribuerons un numéro de partenaire et inviterons les partenaires à nos réunions pour connaître nos activités et notre gestion en toute transparence.
+                Pour ceux qui ne peuvent pas assister, nous partagerons un rapport avec toutes ces activités et l'état des comptes.`,
+                biografiaTitle: "Biographie",
+                biografiaContent: `Nous sommes un refuge pour animaux dédié à sauver, soigner et trouver des foyers aimants pour les animaux abandonnés et maltraités. Fondé en 2020, notre mission est de s'assurer que chaque animal ait une seconde chance pour une vie heureuse et en bonne santé.`,
+                portafolioTitle: "Projets",
+                proyecto1: `<span>Rescue d'Animaux de Rue:</span> Depuis notre fondation, nous avons sauvé plus de 200 animaux des rues, leur fournissant des soins médicaux et nécessaires.`,
+                proyecto2: `<span>Campagnes de Stérilisation:</span> Nous organisons des campagnes de stérilisation pour contrôler la population des animaux errants et améliorer leur qualité de vie.`,
+                proyecto3: `<span>Éducation et Sensibilisation:</span> Nous organisons des ateliers et des conférences dans les écoles et les communautés pour éduquer sur le bien-être animal et l'importance de l'adoption responsable.`,
+                proyecto4: `<span>Foster Homes:</span> Nous fournissons des foyers temporaires pour les animaux secourus jusqu'à ce qu'ils trouvent une adoption permanente.`,
+                contactoTitle: "Contact",
+                contactoContent: `Pour plus d'informations, veuillez nous contacter:
+                Email: motivoanimales113@gmail.com
+                Téléphone: 672405010
+                Adresse: Camino Mucientes 3, Villanubla, Valladolid, Espagne`
+            },
+            de: {
+                headerTitle: "113 Tierschutz",
+                headerSubtitle: "Liebe und Fürsorge für alle Tiere",
+                navItems: ["Biographie", "Adoptieren", "Projekte", "Tiere", "Partner", "Kontakt"],
+                adoptaTitle: "Adoptieren",
+                adoptaHighlight: "Schauen Sie sich unsere adoptierbaren Tiere an!",
+                animalesTitle: "Tiere zur Adoption verfügbar",
+                sociosTitle: "Partner",
+                sociosButton: "Werden Sie Partner!",
+                sociosContent: `WERDEN SIE PARTNER UND TEIL UNSERER GROSSEN 113 FAMILIE🐾❤️
+                Wir wissen, dass viele von Ihnen unsere Arbeit täglich verfolgen und helfen möchten. Wir haben eine neue Möglichkeit, dies zu tun.
+                Sie können für 5€ pro Monat oder 60€ jährlich Partner werden und es ist so einfach, sich hier anzumelden.
+                Die Beiträge unserer Partner bilden wertvolle Einnahmen, um die täglichen Ausgaben des Tierheims zu decken.
+                Im Moment ist die einzige Einnahmequelle des Vereins gelegentliche Spenden, mit den Partnergebühren möchten wir sicherstellen, dass der 113 seine Ziele weiterhin erreicht, indem er den Schutz und das Wohl der Tiere anstrebt.
+                Bitte füllen Sie das Formular aus, wenn Sie daran interessiert sind, Teil der 113 Familie als Partner zu werden.
+                Wir hoffen auf Ihre Unterstützung, damit wir gemeinsam größere Arbeit leisten und weiterhin bedürftigen Tieren helfen und ihre Rechte verteidigen können.
+                Wir haben das Partneraufnahme-Dokument, das an 💌 socios113@gmail.com gesendet werden sollte.
+                Wir weisen Ihnen eine Partnernummer zu und laden Partner zu unseren Treffen ein, um unsere Aktivitäten und Management mit voller Transparenz zu kennen.
+                Für diejenigen Partner, die nicht teilnehmen können, teilen wir einen Bericht mit all diesen Aktivitäten und dem Kontostand.`,
+                biografiaTitle: "Biographie",
+                biografiaContent: `Wir sind ein Tierschutzverein, der sich dem Retten, Pflegen und Finden von liebevollen Heimen für verlassene und misshandelte Tiere widmet. Gegründet im Jahr 2020, ist unsere Mission sicherzustellen, dass jedes Tier eine zweite Chance auf ein glückliches und gesundes Leben hat.`,
+                portafolioTitle: "Projekte",
+                proyecto1: `<span>Rettung von Straßentieren:</span> Seit unserer Gründung haben wir über 200 Tiere von den Straßen gerettet und ihnen medizinische Versorgung und notwendige Pflege gegeben.`,
+                proyecto2: `<span>Kastrationskampagnen:</span> Wir organisieren Kastrationskampagnen, um die Population der Straßentiere zu kontrollieren und ihre Lebensqualität zu verbessern.`,
+                proyecto3: `<span>Bildung und Bewusstsein:</span> Wir führen Workshops und Vorträge in Schulen und Gemeinden durch, um über Tierschutz und die Bedeutung verantwortungsvoller Adoption aufzuklären.`,
+                proyecto4: `<span>Pflegeheime:</span> Wir bieten vorübergehende Unterkünfte für gerettete Tiere, bis sie eine dauerhafte Adoption finden.`,
+                contactoTitle: "Kontakt",
+                contactoContent: `Für weitere Informationen kontaktieren Sie uns bitte:
+                Email: motivoanimales113@gmail.com
+                Telefon: 672405010
+                Adresse: Camino Mucientes 3, Villanubla, Valladolid, Spanien`
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelector("header h1").innerText = content[lang].headerTitle;
+            document.querySelector("header p").innerText = content[lang].headerSubtitle;
+            const navItems = document.querySelectorAll("nav a");
+            content[lang].navItems.forEach((item, index) => {
+                navItems[index].innerText = item;
+            });
+            document.getElementById("adoptaTitle").innerText = content[lang].adoptaTitle;
+            document.getElementById("adoptaHighlight").innerText = content[lang].adoptaHighlight;
+            document.getElementById("animalesTitle").innerText = content[lang].animalesTitle;
+            document.getElementById("sociosTitle").innerText = content[lang].sociosTitle;
+            document.getElementById("sociosButton").innerText = content[lang].sociosButton;
+            document.getElementById("sociosContent").innerText = content[lang].sociosContent;
+            document.getElementById("biografiaTitle").innerText = content[lang].biografiaTitle;
+            document.getElementById("biografiaContent").innerText = content[lang].biografiaContent;
+            document.getElementById("portafolioTitle").innerText = content[lang].portafolioTitle;
+            document.getElementById("proyecto1").innerHTML = content[lang].proyecto1;
+            document.getElementById("proyecto2").innerHTML = content[lang].proyecto2;
+            document.getElementById("proyecto3").innerHTML = content[lang].proyecto3;
+            document.getElementById("proyecto4").innerHTML = content[lang].proyecto4;
+            document.getElementById("contactoTitle").innerText = content[lang].contactoTitle;
+            document.getElementById("contactoContent").innerText = content[lang].contactoContent;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>113 Motivo Animales</h1>
+        <p>Amor y cuidado para todos los animales</p>
+    </header>
+    <nav>
+        <a href="#biografia">Biografía</a>
+        <a href="#adopta">Adopta</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#animales">Animales</a>
+        <a href="#socios">Socios</a>
+        <a href="#contacto">Contacto</a>
+        <div class="language-buttons">
+            <img src="inglaterra.jpg" alt="English" onclick="changeLanguage('en')">
+            <img src="francia.jpg" alt="Français" onclick="changeLanguage('fr')">
+            <img src="alemania.jpg" alt="Deutsch" onclick="changeLanguage('de')">
+        </div>
+    </nav>
+    <div class="container">
+        <section id="adopta">
+            <h2 id="adoptaTitle">Adopta</h2>
+            <p class="highlight-title" id="adoptaHighlight">¡Entra a conocer a nuestros adoptables!</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/113motivoanimales/?locale=es_ES">Facebook</a>
+                <a href="https://www.instagram.com/motivoanimales/?hl=es">Instagram</a>
+            </div>
+        </section>
+        <section id="animales">
+            <h2 id="animalesTitle">Animales Disponibles para Adopción</h2>
+            <div class="adoption-image">
+                <img src="nuestrosadoptables.jpg" alt="Nuestros Adoptables">
+            </div>
+        </section>
+        <section id="socios">
+            <h2 id="sociosTitle">Socios</h2>
+            <div class="socios-content">
+                <a class="btn" href="https://docs.google.com/document/d/1pPyz8Ky1faTXZZNeFUuBSazwOEer4sQR/edit?pli=1" target="_blank" id="sociosButton">¡Hazte socio!</a>
+                <p id="sociosContent">
+                    HAZTE SOCIO Y FORMA PARTE DE NUESTRA GRAN FAMILIA 113🐾❤️
+                    Sabemos que sois muchos los que seguís a diario nuestra labor y queréis ayudar. Tenemos una nueva forma de hacerlo.
+                    Puedes hacerte socio por 5€ al mes, o 60€ anuales y es tan fácil cómo inscribirte aquí.
+                    Las aportaciones de nuestros socios conformarán unos ingresos muy valiosos para afrontar los gastos diarios de la protectora.
+                    Ahora mismo, la única forma de ingresos de la asociación son donaciones puntuales, con las cuotas de socios pretendemos garantizar que el 113 siga alcanzando sus objetivos, buscando la protección y bienestar de los animales.
+                    Por favor, todo aquel que esté interesado en formar parte de la familia 113 como socio, que rellene el formulario.
+                    Esperando contar con vuestro apoyo, para que, juntos, podamos hacer un mayor trabajo para  seguir ayudando y proteger a los animales necesitados y defender sus derechos.
+                    Tenemos a vuestra disposición el documento de admisión de socios que deberá ser enviado al 💌 socios113@gmail.com.
+                    Por nuestra parte se os adjudicará un número de socio e invitaremos a los socios a nuestras reuniones y conocer nuestras actividades y gestiones con total transparencia.
+                    Para aquellos socios que no puedan asistir, compartiremos un informe con todas esas actividades y el estado de cuentas.
+                </p>
+            </div>
+        </section>
+        <section id="proyectos">
+            <h2 id="portafolioTitle">Proyectos</h2>
+            <div class="card">
+                <p id="proyecto1"><span>Rescate de Animales Callejeros:</span> Desde nuestra fundación, hemos rescatado a más de 200 animales de las calles, proporcionándoles atención médica y cuidados necesarios.</p>
+            </div>
+            <div class="card">
+                <p id="proyecto2"><span>Campañas de Esterilización:</span> Organizamos campañas de esterilización para controlar la población de animales callejeros y mejorar su calidad de vida.</p>
+            </div>
+            <div class="card">
+                <p id="proyecto3"><span>Educación y Conciencia:</span> Realizamos talleres y charlas en escuelas y comunidades para educar sobre el bienestar animal y la importancia de la adopción responsable.</p>
+            </div>
+            <div class="card">
+                <p id="proyecto4"><span>Casas de acogida:</span> Proporcionamos hogares temporales para los animales rescatados hasta que encuentran una adopción permanente.</p>
+            </div>
+        </section>
+        <section id="biografia">
+            <h2 id="biografiaTitle">Biografía</h2>
+            <p id="biografiaContent">Somos una protectora de animales dedicada a rescatar, cuidar y encontrar hogares amorosos para animales abandonados y maltratados. Fundada en 2020, nuestra misión es asegurar que cada animal tenga una segunda oportunidad para una vida feliz y saludable.</p>
+        </section>
+        <section id="contacto">
+            <h2 id="contactoTitle">Contacto</h2>
+            <p id="contactoContent">Para más información, por favor contáctanos:<br>
+            Email: motivoanimales113@gmail.com<br>
+            Teléfono: 672405010<br>
+            Dirección: Camino Mucientes 3, Villanubla, Valladolid, España</p>
+            <br><br><br>
+        </section>
+    </div>
+    <footer>
+        &copy; 2024 113 Motivo Animales. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
